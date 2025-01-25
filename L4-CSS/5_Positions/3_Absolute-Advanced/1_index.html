@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* myDiv ko hi position di hai bas toh by default it always
+        work wrt view port*/
+        .myDiv {
+            position: absolute;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>I am a div-1 without position</div>
+
+    <div>I am a div-2 without position</div>
+    <div>I am a div-3 without position</div>
+
+    <div class="myDiv-Parent">
+        I am myDiv's Parent-div
+        
+        <div class="myDiv">I am a div with position and class myDiv</div>
+    </div>
+
+    <div>I am a div-4 without position</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+/* id selector for css */
+#div {
+    background-color: bisque;
+    color: black;
+}
+
+/* class selector for css */
+.myDiv {
+    background-color: red;
+    color: white;
+}
+
+/* Tag selector */
+div {
+    background-color: orange !important;
+    color: purple;
+}
+
+/* Tag selector */
+div {
+    background-color: blue;
+    color: white;
+}

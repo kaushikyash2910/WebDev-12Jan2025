@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* myDiv ko hi position di hai also iska parent is at relative position
+        toh ab yeh work krega wrt its parent that is positioned*/
+        .myDiv {
+            position: absolute;
+            top: 0px;
+        }
+
+        /* myDiv-grandparent ko position dedo */
+        .myDiv-grandparent {
+            position: relative;
+            height: 100px;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>I am a div-1 without position</div>
+
+    <div>I am a div-2 without position</div>
+    <div>I am a div-3 without position</div>
+
+    <div class="myDiv-grandparent">
+        
+        I am myDiv's GrandParent-div
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquam, consequuntur ullam suscipit at natus, possimus voluptates similique illum atque voluptatem quia dolorum sunt incidunt quis magni. Quaerat quibusdam vitae accusamus, repudiandae dignissimos ipsam similique illum est fugiat tempore voluptas explicabo, cum officiis? Commodi dolorem ipsum distinctio ea aliquam repellat.
+        <div class="myDiv-Parent">
+            I am myDiv's Parent-div
+            <div class="myDiv">I am a div with position and class myDiv</div>
+        </div>
+
+    </div>
+    <div>I am a div-4 without position</div>
+
+
+</body>
+
+</html>
