@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem-Unit</title>
+    <style>
+        html{
+            font-size: 40px;
+        }
+        
+        div {
+            font-size: 1.5rem;
+        }
+
+        .div-child {
+            font-size: 2rem;
+        }
+
+        .div-grandchild {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        I am a div
+        <div class="div-child">
+            I am div ka child
+            <div class="div-grandchild">I am div ka grandchild</div>
+        </div>
+    </div>
+</body>
+
+</html>
