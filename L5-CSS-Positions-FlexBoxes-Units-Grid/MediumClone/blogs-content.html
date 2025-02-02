@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .main-content {
+            width: 65%;
+        }
+
+        .sidebar {
+            width: 30%;
+            margin-left: 5%;
+        }
+
+
+        /* Article List */
+        .article {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .article img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .article-content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .article h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .article p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Sidebar */
+        .sidebar .box {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .start-writing {
+            background: #ddebf7;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .start-writing button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background: black;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">            
+            <div class="article">
+                <div class="article-content">
+                    <h2>Feeding Hope: The Inspirational Story of a Disabled Migrant’s Fight</h2>
+                    <p>Text by Jan Bornman and photography by Emile Bosch</p>
+                </div>
+                <img src="placeholder.jpg" alt="Article Image">
+            </div>
+
+            <div class="article">
+                <div class="article-content">
+                    <h2>When 11-Year-Olds Call Each Other Sociopaths</h2>
+                    <p>Are contemporary revenge pop lyrics turning us into bullies?</p>
+                </div>
+                <img src="placeholder.jpg" alt="Article Image">
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="box">
+                <h3>Staff Picks</h3>
+                <p>A Comprehensive Review of Rolling Stone Magazine’s ‘500 Greatest Albums of All Time’</p>
+            </div>
+
+            <div class="start-writing">
+                <h3>Writing on Medium</h3>
+                <p>New writer FAQ, expert writing advice, and grow your readership.</p>
+                <button>Start writing</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

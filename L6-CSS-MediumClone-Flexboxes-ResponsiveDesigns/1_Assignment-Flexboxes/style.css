@@ -1,0 +1,18 @@
+/* "*" means select all tags/elements on page */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.top-heading {
+    position: sticky;
+    top: 0;
+    font-size: 50px;
+    border: 1px solid black;
+    background-color: #4f4f4f;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
