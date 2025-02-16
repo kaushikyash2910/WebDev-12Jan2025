@@ -1,0 +1,13 @@
+Difference between let and var
+
+1. let hoist nhi hoga, var hoga
+ReferenceError: Cannot access 'a' before initialization
+console.log(x); // Error dega
+let x = 20;
+
+console.log(x); // Error Nahi dega
+var x = 20;
+
+2. Scope alag hote hai let and var ke
+2.1 Let ka scope hota hai lexical scope/block scope
+2.2 Var ka scope hota hai functional
