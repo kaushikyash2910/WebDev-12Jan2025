@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .card-header .icon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #f5a623;
+            font-size: 16px;
+        }
+
+        .card-header .status {
+            color: #e74c3c;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-content {
+            margin-top: 10px;
+        }
+
+        .card-content .count {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            margin-top: 15px;
+            position: relative;
+        }
+
+        .bar-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 100px;
+            background: transparent;
+            padding: 5px 0;
+        }
+
+        .bar {
+            width: 12px;
+            background: #ddd;
+            border-radius: 4px;
+            transition: height 0.3s ease;
+        }
+
+        .bar.highlight {
+            background: #f5a623;
+            position: relative;
+        }
+
+        .bar.highlight::after {
+            content: "142";
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #f5a623;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 5px;
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="icon">
+                🔖 Check Out
+            </div>
+            <div class="status">
+                <span
+                    style="border: 1px solid red; border-radius: 50%; height: 20px; width: 20px; display: flex; justify-content: center; align-items: center;">⬇</span>
+                9.25%
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="count">25,610</div>
+
+            <div class="chart-container">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                    <div class="bar" style="height: 50%"></div>
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 20%"></div>
+                    <div class="bar" style="height: 10%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 100%"></div>
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar highlight" style="height: 80%"></div>
+                    <div class="bar" style="height: 20%"></div>
+                    <div class="bar" style="height: 25%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 20%"></div>
+                    <div class="bar" style="height: 25%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                </div>
+                <div class="chart-labels">
+                    <span>03-07</span>
+                    <span>10-14</span>
+                    <span>17-21</span>
+                    <span>24-28</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
