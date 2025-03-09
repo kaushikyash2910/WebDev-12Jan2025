@@ -20,5 +20,4 @@ function task3(){
         console.log("task3 ends");
     }, 2000);
 }
-
 task1(task2); // task2 is passed as callback to task1
