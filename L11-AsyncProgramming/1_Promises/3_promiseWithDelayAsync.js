@@ -16,5 +16,6 @@ let p = new Promise(function (res, rej) {
     }, 5000);
 });
 
+console.log(".then and .catch defined");
 p.then(promiseFullfilled)
     .catch(promiseRejected);
