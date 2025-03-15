@@ -1,0 +1,14 @@
+Number.prototype.toPrecision = function(){
+    console.log("Nahi maanega inbuilt change kar diya meine");
+}
+ƒ (){
+    console.log("Nahi maanega inbuilt change kar diya meine");
+}
+-----------------------------------------------------------------
+let a = 1;
+undefined
+-----------------------------------------------------------------
+a.toPrecision()
+Nahi maanega inbuilt change kar diya meine
+undefined
+-----------------------------------------------------------------

@@ -1,0 +1,13 @@
+let s = "Hello World"
+undefined
+-----------------------------------------------------------------
+s.split(' ')
+(2) ['Hello', 'World']
+-----------------------------------------------------------------
+let a = 1;
+undefined
+-----------------------------------------------------------------
+a.toPrecision(3)
+'1.00'
+
+Comments: a and s par bhi dot operator, therefore they are also objects
