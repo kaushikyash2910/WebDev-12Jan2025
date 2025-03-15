@@ -1,23 +1,27 @@
 #include <iostream>
 using namespace std;
 
-class Car{
-    public:
+class Car
+{
+public:
     string name;
     int price;
 
-    Car(string s,int n){
+    Car(string s, int n)
+    {
         name = s;
         price = n;
     }
 
-    void details(){
-        cout<<"Name  : "<<name<<endl;
-        cout<<"Price : "<<price<<endl;
+    void details()
+    {
+        cout << "Name  : " << this->name << endl;
+        cout << "Price : " << this->price << endl;
     }
 };
 
-int main(){
-    Car A("BWM",100);
+int main()
+{
+    Car A("BWM", 100);
     A.details();
 }
