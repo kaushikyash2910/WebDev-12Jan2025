@@ -1,16 +1,27 @@
-let div = document.querySelector('#myDiv'); // Single element
+let ul = document.createElement('ul');
 
-let flag = true;
-setInterval(() => {
-    if (flag) {
-        div.style.color = 'blue';
-        div.style.border = '1px solid black';
-        div.style.backgroundColor = 'orange';
-    }
-    else{
-        div.style.color = 'white';
-        div.style.border = '1px solid black';
-        div.style.backgroundColor = 'black';
-    }
-    flag = !flag;
-}, 1000);
+ul.classList.add('movies');
+ul.setAttribute('id', 'movies');
+console.log(ul);
+
+let div = document.querySelector('.myDiv');
+console.log(div)
+
+console.log(ul)
+div.appendChild(ul);
+
+let movies = ['Race 3', 'Harry Potter', 'Terminator']
+
+for (let m of movies) {
+    let li = document.createElement('li');
+    li.innerText = m;
+    ul.appendChild(li);
+}
+
+// ul ka parentElement
+console.log(ul.parentElement);
+console.log(ul.parentElement.parentElement);
+console.log(ul.childNodes);
+
+// sibling
+console.log(div.nextElementSibling);
