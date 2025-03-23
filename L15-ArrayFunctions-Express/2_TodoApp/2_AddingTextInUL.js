@@ -2,7 +2,7 @@ let input = document.querySelector('input');
 let button = document.querySelector('button');
 
 button.addEventListener('click', () => {
-    
+
     if (input.value.trim()) {
         /* <li>
              Cricket
@@ -27,7 +27,7 @@ button.addEventListener('click', () => {
         li.appendChild(btn1);
         li.appendChild(btn2);
         li.appendChild(btn3);
-        
+
         // console.log(li)
         // 4. Finally li is created as expected append it to ul
         let taskList = document.querySelector('.taskList');
