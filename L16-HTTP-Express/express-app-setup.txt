@@ -1,0 +1,21 @@
+1. Setup Project   
+    >> npm init -y
+    # Creates package.json
+2. Install express
+    >> npm i express
+3. Create app.js
+    ```
+    const express = require('express');
+    const app = express();
+    const PORT = 4444;
+
+    app.get('/',(req,res)=>{
+        res.send("hello world");
+    })
+
+    app.listen(PORT,()=>{
+        console.log(`http://localhost:${PORT}`);
+    })
+    ```
+4. In terminal, run
+    >> node app.js

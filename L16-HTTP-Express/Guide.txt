@@ -1,0 +1,20 @@
+- Project setup : Inside terminal, it will create package.json
+    >> npm init -y
+    or we can also do
+    >> npm init
+
+- Install packages from npm now
+    >> npm i write
+
+- node_modules and pacakge-lock.json are created 
+
+- Agar package.json already hai
+    >> npm i
+    or 
+    >> npm install
+
+- Agar baar baar server ke changes par server ko band krke nhi
+ chalana toh install karo
+    >> npm i -g nodemon
+    or
+    >> sudo npm i -g nodemon

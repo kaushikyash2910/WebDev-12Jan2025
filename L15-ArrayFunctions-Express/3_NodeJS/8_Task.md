@@ -8,3 +8,4 @@ Create a class Person
 
 Person has following details
     - name, age, gender
+    - all names are unique
