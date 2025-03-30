@@ -1,0 +1,6 @@
+> path.join('a','b')
+'a/b'
+> path.join('a','/b')
+'a/b'
+> path.join('a/','/b')
+'a/b'
