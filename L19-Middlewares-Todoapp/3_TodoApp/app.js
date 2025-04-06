@@ -1,6 +1,7 @@
 const path = require('path');
 const { v4: uuid } = require('uuid');
 const express = require('express');
+const { stat } = require('fs');
 const app = express();
 const PORT = 4444;
 
@@ -35,8 +36,30 @@ app.post('/todos', (req, res) => {
     });
 })
 
-// app.put('/', () => { })
-// app.delete('/', () => { })
+app.put('/todos', (req, res) => {
+    const { id } = req.body;
+    todos = todos.map(t => {
+        if (t.id === id) {
+            return {
+                ...t,
+                status: !t.status
+            }
+        }
+
+        return t;
+    })
+    res.send({
+        status: "Put req success"
+    });
+})
+
+
+app.delete('/todos', (req, res) => {
+    const { id } = req.body;
+    todos = todos.filter(t => {
+        return t.id !== id
+    });
+})
 
 
 app.listen(PORT, () => {
