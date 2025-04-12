@@ -19,9 +19,14 @@ function addToTaskList(data) {
         li.classList.add('task-item');
         li.innerHTML = `<span class="task-text">${item.task}</span>
         <div class="task-actions">
-            <button class="complete-btn">${item.completed ? 'Undo' : 'Complete'}</button>
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
+            <button class="complete-btn">
+                ${item.status ? 'Undo' : 'Complete'}
+                <span style='display:none;'>${item.id}</span>
+            </button>
+            <button class="delete-btn">
+            Delete
+            <span style='display:none;'>${item.id}</span>
+            </button>
         </div>`
 
         taskList.appendChild(li);
@@ -51,4 +56,42 @@ taskForm.addEventListener('submit', (ev) => {
         .catch(err => {
             alert(err.message);
         })
+})
+
+
+taskList.addEventListener('click', (ev) => {
+    // tasklist ke andar jab complete-btn or delete-btn par click ho
+    // tabhi kaam karna hai
+    let element = ev.target;
+    if (element.classList.contains('complete-btn')) {
+        console.log("Complete button clicked")
+        // console.log(element)
+        // console.log(element.children)
+        // console.log(element.children[0])
+        // console.log(element.children[0].innerText)
+        let id = element.children[0].innerText;
+        axios.put('/todos', {
+            id
+        }).then(({ data }) => {
+            // console.log(data);
+            refreshTodos();
+        })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+    else if (element.classList.contains('delete-btn')) {
+        // console.log("Delete button clicked")
+        let id = element.children[0].innerText;
+        axios.delete('/todos', {
+            data: {
+                id
+            }
+        }).then(({ data }) => {
+            refreshTodos();
+        })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 })
