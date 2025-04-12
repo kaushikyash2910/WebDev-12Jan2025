@@ -1,6 +1,46 @@
 let taskForm = document.querySelector('#task-form');
 let taskInput = document.querySelector('#task-input');
 let taskList = document.querySelector('#task-list');
+let filterButtons = document.querySelector('.filter-buttons');
+let clearCompleted = document.querySelector('#clear-completed');
+
+let currentTodos = [];
+
+filterButtons.addEventListener('click', (ev) => {
+    // console.log(ev.target);
+    let element = ev.target;
+    let id = element.getAttribute('id');
+    let newArr = [];
+
+    let allButtons = element.parentElement.children;
+    console.log(allButtons)
+    for (let i = 0; i < allButtons.length; i++) {
+        allButtons[i].classList.remove('active')
+    }
+
+    if (id == 'filter-all') { // 0th index par allButton ke andar
+        allButtons[0].classList.add('active');
+        newArr = currentTodos;
+    } else if (id == 'filter-completed') { // 2nd index par allButton ke andar
+        allButtons[2].classList.add('active');
+        newArr = currentTodos.filter(item => item.status == true);
+    }
+    else if (id == 'filter-active') { // 1st index par allButton ke andar
+        allButtons[1].classList.add('active');
+        newArr = currentTodos.filter(item => item.status == false);
+    }
+
+    addToTaskList(newArr);
+})
+
+clearCompleted.addEventListener('click', (ev) => {
+    axios.put('/clear-completed')
+        .then(() => {
+            refreshTodos();
+        }).catch(err => {
+            alert(err.message)
+        })
+})
 
 function addToTaskList(data) {
     taskList.innerText = ''; // Empty the tasklist first before you add
@@ -36,6 +76,7 @@ function addToTaskList(data) {
 function refreshTodos() {
     axios.get('/todos')
         .then(({ data }) => {
+            currentTodos = data;
             addToTaskList(data);
         }).catch(err => {
             console.log(err);
