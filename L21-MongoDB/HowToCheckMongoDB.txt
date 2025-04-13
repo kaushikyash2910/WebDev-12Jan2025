@@ -1,0 +1,6 @@
+- Open Terminal
+- Vs code mei folder banaye data naam ka
+- Command run karein:
+    >> mongod --dbpath=data
+- Phir jaaien broswer par type karein and enter dabaein
+    >> localhost:27017
