@@ -71,7 +71,6 @@ app.post('/todos', async (req, res) => {
 // })
 
 app.get('/todos', async (req, res) => {
-
     try {
         let data = await Tasks.find({})
         res.json({
