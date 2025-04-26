@@ -3,7 +3,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const PORT = 4444;
+const cookie = require('cookie')
+var cookieParser = require('cookie-parser')
 
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -32,9 +35,13 @@ app.post('/login', async (req, res) => {
         msg: "Invalid password"
     })
 
-    res.cookie({
-        
-    })
+    res.setHeader(
+        "Set-Cookie",
+        cookie.serialize("name", String(user.email), {
+            maxAge: 60 * 60 * 24 * 7,
+            httpOnly: true
+        }),
+    );
 
     res.status(200).json({
         msg: "Welcome to app"
@@ -42,7 +49,11 @@ app.post('/login', async (req, res) => {
 
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', async (req, res) => {
+    const {name} = req.cookies;
+    let user = await User.findOne({email:name});
+    if(!user) return res.send('<h1>Invalid Cookie hai</h1>');
+
     res.send("Welcome to internal app dashboard");
 })
 
