@@ -3,11 +3,16 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const PORT = 4444;
-const cookie = require('cookie')
-var cookieParser = require('cookie-parser')
+const session = require('express-session')
 
-app.use(cookieParser())
+
 app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: 'abfbahrbkesbhrhkjesvfbse,fjesbvrtjhvwej.t vj.',
+    resave: false,
+    saveUninitialized: true, // Cookie ki need ho ya na ho cookie banado
+}))
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const userSchema = new mongoose.Schema({
@@ -35,13 +40,7 @@ app.post('/login', async (req, res) => {
         msg: "Invalid password"
     })
 
-    res.setHeader(
-        "Set-Cookie",
-        cookie.serialize("name", String(user.email), {
-            maxAge: 60 * 60 * 24 * 7,
-            httpOnly: true
-        }),
-    );
+    req.session.email = user.email;
 
     res.status(200).json({
         msg: "Welcome to app"
@@ -50,11 +49,12 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/dashboard', async (req, res) => {
-    const { name } = req.cookies;
-    let user = await User.findOne({ email: name });
+    const { email } = req.session;
+    console.log(req.session)
+    let user = await User.findOne({ email});
     if (!user) return res.send('<h1>Invalid Cookie hai</h1>');
 
-    res.send("Welcome to internal app dashboard");
+    res.send(`Welcome to internal app dashboard ${req.session.email}`);
 })
 
 mongoose.connect('mongodb://localhost:27017/26-apr-cookiesDB').then(() => {
