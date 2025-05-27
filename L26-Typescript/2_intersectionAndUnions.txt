@@ -1,0 +1,48 @@
+type Person = {
+    name: string
+}
+
+type StudentData = {
+    marks: number
+}
+
+// interface Person {
+//     name: string
+// }
+
+// interface StudentData {
+//     marks: number
+// }
+
+type Student = Person & StudentData;
+
+let raja: Student = {
+  name: "Raja",
+  marks: 90,
+};
+
+console.log(raja)
+
+
+// ----------------------------------
+type Student = {
+    name: string,
+    marks: number
+}
+
+type Mentor = {
+    name: string,
+    subject: string
+}
+
+type TeamMember = Student | Mentor;
+function introduce (person: TeamMember){
+    console.log(`Hi, I am ${person.name}`)
+}
+
+let Member: TeamMember = {
+    name: 'Kartik',
+    subject: 'TypeScript'
+}
+// console.log(Member);
+introduce(Member);

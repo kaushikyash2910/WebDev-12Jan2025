@@ -1,0 +1,23 @@
+// type Student = {
+//     name: string,
+//     marks: number
+// }
+interface Student {
+  name: string;
+  marks: number;
+  subject: "Maths" | "English";
+  pass: () => void;
+}
+
+let raja: Student = {
+  name: "Raja",
+  marks: 90,
+  subject: "English",
+  pass: function () {
+    console.log(this.marks >= 95);
+  },
+};
+
+console.log(raja);
+console.log(raja.name);
+raja.pass();

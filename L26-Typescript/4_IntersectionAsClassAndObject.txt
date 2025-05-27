@@ -1,0 +1,28 @@
+interface Person {
+  name: string;
+  age: number;
+}
+
+// 1. Interface as an Object
+let raja: Person = {
+  name: "Raja",
+  age: 20,
+};
+
+console.log(raja);
+// 2. Interface as class
+class Student implements Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  print() {
+    console.log("Name: ", this.name);
+  }
+}
+
+let priya = new Student("Priya", 19);
+priya.print();

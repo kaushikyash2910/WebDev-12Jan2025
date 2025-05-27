@@ -1,0 +1,23 @@
+abstract class User {
+  /*name: string;
+  constructor(name: string) {
+    this.name = name;
+  }*/
+  constructor(public name: string) {}
+  abstract getRole(): string;
+
+  // Defined methods
+  greet() {
+    console.log(`Welcome, ${this.name}`);
+  }
+}
+
+class Admin extends User {
+  getRole(): string {
+    return "Admin";
+  }
+}
+
+const admin = new Admin("Kartik");
+admin.greet();             
+console.log(admin.getRole()); 

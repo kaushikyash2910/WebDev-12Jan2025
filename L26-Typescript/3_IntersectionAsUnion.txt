@@ -1,0 +1,16 @@
+type Rectangle = {
+    x: number,
+    y: number,
+}
+
+type depth = {
+    z: number
+}
+
+type Cuboid = Rectangle & depth;
+
+let shape: Cuboid = {
+    x: 1,
+    y: 1,
+    z: 1,
+}
