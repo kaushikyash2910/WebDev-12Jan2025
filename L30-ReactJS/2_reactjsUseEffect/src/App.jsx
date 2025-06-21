@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     async function fetchTodos() {
       const { data } = await axios.get("https://dummyjson.com/todos");
-      console.log(data.todos);
+      console.log(data);
       setTodos(data.todos);
     }
 
@@ -17,10 +17,10 @@ const App = () => {
 
   return (
     <div>
-      {todos.map((todo, indx) => {
+      {todos.map((t, indx) => {
         return (
           <li key={indx}>
-            {todo.todo} - {todo.completed}
+            {t.todo} - {t.completed.toString()}
           </li>
         );
       })}
