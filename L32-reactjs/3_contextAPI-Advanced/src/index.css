@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-item:link,
+.nav-item:visited {
+  text-decoration: none;
+  color: black;
+}
+
+
+.active {
+  text-decoration: underline !important;
+  color: blue !important;
+}
+
+.movie-card {
+  border: 1px solid black;
+  height: 50px;
+  width: 120px;
+  padding: 10px;
+}
+
+.movie-list{
+  display: flex;
+  justify-content: space-evenly;
+}
