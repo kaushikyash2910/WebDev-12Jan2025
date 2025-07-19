@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 module.exports.createPost = async (req, res) => {
     const { title, content } = req.body;
-
+    console.log(title, content);
     if (!title || !content) return res.status(401).json({
         message: "Title and Content both are required"
     })
@@ -20,6 +20,6 @@ exports.getAllPosts = async (req, res) => {
         include: { author: { select: { id: true, username: true } } },
         orderBy: { createdAt: 'desc' },
     });
-    
+
     res.status(201).json(posts);
 }

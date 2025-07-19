@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import AdminPortal from "./pages/AdminPortal";
+import NewPost from "./pages/NewPost";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admin" element={<AdminPortal />} />
+        <Route path="/admin/new" element={<NewPost />} />
       </Routes>
     </div>
   );

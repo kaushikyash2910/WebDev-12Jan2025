@@ -5,12 +5,12 @@ const jwt = require('jsonwebtoken');
 module.exports = async (req, res, next) => {
     try {
         const token = req.cookies.token;
-        console.log("Auth middleware: ", token);
-        if (!token) return res.status(404).json({ messgae: 'invalid token' });
 
-        const data = jwt.verify(token, process.env.JWT_TOKEN);
-        console.log(data);
-        req.userId = data.id;
+        if (!token) return res.status(404).json({ messgae: 'invalid token' });
+        console.log("Auth middleware: ", token);
+        const data = jwt.verify(token, process.env.JWT_SECRET);
+        console.log("Data", data);
+        req.userId = data.userId;
         // const user = await prisma.user.findUnique({
         //     where: {id: data.id}
         // })
