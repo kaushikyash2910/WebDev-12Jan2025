@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import AdminPortal from "./pages/AdminPortal";
 import NewPost from "./pages/NewPost";
+import EditPost from "./pages/EditPost";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<AdminPortal />} />
         <Route path="/admin/new" element={<NewPost />} />
+        <Route path="/admin/edit/:id" element={<EditPost />} />
       </Routes>
     </div>
   );

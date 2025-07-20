@@ -23,3 +23,29 @@ exports.getAllPosts = async (req, res) => {
 
     res.status(201).json(posts);
 }
+
+
+exports.getPostById = async (req, res) => {
+    const { id } = req.params;
+    const post = await prisma.post.findUnique({
+        where: { id: Number(id) },
+        include: { author: { select: { id: true, username: true } } }
+    });
+
+    console.log("POST BY ID", post);
+    res.status(201).json(post);
+}
+
+exports.updatePost = async (req, res) => {
+    const { id } = req.params;
+    const { title, content } = req.body;
+    const post = await prisma.post.update({
+        where: { id: Number(id) },
+        data: {
+            title,
+            content
+        }
+    })
+
+    res.status(201).json(post);
+}
