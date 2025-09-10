@@ -20,30 +20,30 @@ export const api = createApi({
         //     query: (credentials) => ({ url: '/auth/login', method: 'POST', body: credentials }),
         //     invalidatesTags: ['User'],
         // }),
-        // fetchUser: builder.query({
-        //     query: () => '/auth/me',
-        //     providesTags: ['User'],
-        // }),
+        fetchUser: builder.query({
+            query: () => '/auth/me',
+            providesTags: ['User'],
+        }),
         fetchPosts: builder.query({
             query: () => '/posts',
-            providesTags: ['Posts'],
+            providesTags: ['Posts']
         }),
         createPost: builder.mutation({
             query: (post) => ({ url: '/posts', method: 'POST', body: post }),
             invalidatesTags: ['Posts'],
         }),
-        // deletePost: builder.mutation({
-        //     query: (id) => ({ url: `/posts/${id}`, method: 'DELETE' }),
-        //     invalidatesTags: ['Posts'],
-        // }),
+        deletePost: builder.mutation({
+            query: (id) => ({ url: `/posts/${id}`, method: 'DELETE' }),
+            invalidatesTags: ['Posts'],
+        }),
     }),
 });
 
 export const {
     // useSignupMutation,
     // useLoginMutation,
-    // useFetchUserQuery,
+    useFetchUserQuery,
     useFetchPostsQuery,
     useCreatePostMutation,
-    // useDeletePostMutation,
+    useDeletePostMutation,
 } = api;

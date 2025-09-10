@@ -49,3 +49,12 @@ exports.updatePost = async (req, res) => {
 
     res.status(201).json(post);
 }
+
+exports.deletePost = async (req, res) => {
+    const { id } = req.params;
+    const post = await prisma.post.delete({
+        where: { id: Number(id) }
+    })
+
+    res.status(201).json(post);
+}
